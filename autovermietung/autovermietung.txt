@@ -1,0 +1,5 @@
+VW;klar;1
+BMW;null;0
+Scoda;zappa;1
+Porsche;lara;2
+Mini;null;1
