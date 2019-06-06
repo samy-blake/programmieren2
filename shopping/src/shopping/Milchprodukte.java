@@ -3,8 +3,9 @@ package shopping;
 public class Milchprodukte extends CartItem {
 	private double mFat;
 
-	public Milchprodukte(String name, int quantity, double pricePerUnit) throws RuntimeException {
+	public Milchprodukte(String name, int quantity, double pricePerUnit, double fat) throws RuntimeException {
 		super(name, quantity, pricePerUnit);
+		mFat = fat;
 	}
 
 	public double getFat() {
@@ -17,7 +18,8 @@ public class Milchprodukte extends CartItem {
 	
 	@Override
 	public String toString() {
-		return String.format("%s x %s (%s % Fett) %s, %s", mQuantity, mName, mFat, mPricePerUnit, mQuantity * mPricePerUnit);
+		// %1$5s x %2$-30s %3$10.2f, %4$10.2f
+		return String.format("%1$5s x %2$-30s %3$10.2f, %4$10.2f", mQuantity, mName + " ("+mFat+"%)", mPricePerUnit, mQuantity * mPricePerUnit);
 	}
 
 }

@@ -18,8 +18,17 @@ public class ShoppingCart {
 		mCartItemList.add(item);		
 	}
 	
+	/**
+	 * liefert die gesamt kosten alle caritems zurueck
+	 * @return double
+	 */
 	public double getTotalCost() {
-		return 0.0;
+		double totalCost = 0;
+		for (int i = 0; i < mCartItemList.size(); i++) {
+			CartItem item = mCartItemList.get(i);
+			totalCost += item.getCost();
+		}
+		return totalCost;
 	}
 	
 
@@ -27,8 +36,9 @@ public class ShoppingCart {
 		String result = "";
 		for (int i = 0; i < mCartItemList.size(); i++) {
 			CartItem item = mCartItemList.get(i);
-			result += String.format("%s \n", item);
+			result += String.format("%s \n", item.toString());
 		}
+		result += String.format("%1$51s %2$10.2f", "Summe: ", getTotalCost());
 		return result;
 	}
 	

@@ -2,19 +2,19 @@ package shopping;
 
 public class Konto {
 	private String mName;
-	private String mPin;
+	private int mPin;
 	private boolean mLogged;
 	
-	Konto(String name, String pin) {
+	Konto(String name, int pin) {
 		mName = name;
 		mPin = pin;
 	}
 	
-	public boolean login(String name, String pin) {
+	public boolean login(String name, int pin) {
 		if(
 			!mLogged &&
 			mName.equals(name) &&
-			mPin.equals(pin)
+			mPin == pin
 		) {
 			mLogged = true;
 			return true;

@@ -2,7 +2,12 @@ package shopping;
 
 import java.util.ArrayList;
 
-public class LoginService {
+/**
+ * kann nicht vererbt werden durch das wort "final"
+ * @author soren
+ *
+ */
+public final class LoginService {
 	private static ArrayList<Konto> mEmployees = new ArrayList<Konto>();
 	
 	private static Konto getKonto(String name) {
@@ -17,10 +22,10 @@ public class LoginService {
 	
 	
 	public static void prepareLogins() {
-		mEmployees.add(new Konto("sören", "balke"));
+		mEmployees.add(new Konto("sören", 1111));
 	}
 	
-	public static boolean login(String name, String pin) {
+	public static boolean login(String name, int pin) {
 		Konto konto = getKonto(name);
 		if(konto == null) {
 			return false;

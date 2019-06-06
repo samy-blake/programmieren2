@@ -47,6 +47,6 @@ public class CartItem {
 	}
 	
 	public String toString() {
-		return String.format("%s x %s %s, %s", mQuantity, mName, mPricePerUnit, mQuantity * mPricePerUnit);
+		return String.format("%1$5s x %2$-30s %3$10.2f, %4$10.2f", mQuantity, mName, mPricePerUnit, mQuantity * mPricePerUnit);
 	}
 }
